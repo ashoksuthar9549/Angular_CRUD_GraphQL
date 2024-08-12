@@ -1,0 +1,14 @@
+<div class="modal-backdrop" (click)="closeModal()"></div>
+<div class="modal">
+  <div class="modal-header">
+    <h2>{{ title }}</h2>
+    <button class="close-btn" (click)="closeModal()">×</button>
+  </div>
+  <div class="modal-body">
+    <p>{{ message }}</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn confirm-btn" (click)="confirm()">Confirm</button>
+    <button class="btn cancel-btn" (click)="closeModal()">Cancel</button>
+  </div>
+</div>

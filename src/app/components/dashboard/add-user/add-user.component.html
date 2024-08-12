@@ -1,0 +1,75 @@
+<form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="user_name">Username</label>
+      <input id="user_name" formControlName="user_name" type="text" placeholder="Enter your username">
+      <p class="error" *ngIf="addUserForm.get('user_name')?.invalid && addUserForm.get('user_name')?.touched">
+        Username is required
+      </p>
+    </div>
+
+    <div>
+      <label for="first_name">First Name</label>
+      <input id="first_name" formControlName="first_name" type="text" placeholder="Enter your first name">
+      <p class="error" *ngIf="addUserForm.get('first_name')?.invalid && addUserForm.get('first_name')?.touched">
+        First name is required
+      </p>
+    </div>
+
+    <div>
+      <label for="last_name">Last Name</label>
+      <input id="last_name" formControlName="last_name" type="text" placeholder="Enter your last name">
+      <p class="error" *ngIf="addUserForm.get('last_name')?.invalid && addUserForm.get('last_name')?.touched">
+        Last name is required
+      </p>
+    </div>
+
+    <div *ngIf="!isEdit">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" placeholder="Enter your password">
+      <p class="error" *ngIf="addUserForm.get('password')?.invalid && addUserForm.get('password')?.touched">
+        Password is required
+      </p>
+    </div>
+    
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" placeholder="Enter your email">
+      <p class="error" *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched">
+        Enter a valid email
+      </p>
+    </div>
+    
+    <div>
+      <label for="phone_no">Phone Number</label>
+      <input id="phone_no" formControlName="phone_no" type="text" placeholder="Enter your phone number">
+      <p class="error" *ngIf="addUserForm.get('phone_no')?.invalid && addUserForm.get('phone_no')?.touched">
+        Phone number is required
+      </p>
+    </div>
+
+    <div *ngIf="!isEdit">
+      <label for="date_of_birth">Date of Birth</label>
+      <input id="date_of_birth" formControlName="date_of_birth" type="date">
+      <p class="error" *ngIf="addUserForm.get('date_of_birth')?.invalid && addUserForm.get('date_of_birth')?.touched">
+        Date of birth is required
+      </p>
+    </div>
+    
+    <div>
+      <label for="status">Status</label>
+      <label class="switch">
+        <input type="checkbox" formControlName="status" id="status"/>
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <!-- <div>
+      <p *ngIf="errorMessage()">{{errorMessage()}}</p>
+    </div> -->
+    
+    <div>
+      <button type="submit" [disabled]="addUserForm.invalid">{{isEdit ? 'Update' : 'Add'}}</button>
+      <!-- <button type="submit" [disabled]="addUserForm.invalid">ADD</button> -->
+    </div>
+  </form>
+  

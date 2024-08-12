@@ -1,0 +1,108 @@
+.toaster-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+  
+  .toaster {
+    position: relative;
+    padding: 15px;
+    border-radius: 4px;
+    color: white;
+    -webkit-animation: fadeinout 3s forwards;
+            animation: fadeinout 3s forwards;
+  
+    &.success {
+      background-color: #28a745;
+    }
+    &.error {
+      background-color: #dc3545;
+    }
+    &.info {
+      background-color: #17a2b8;
+    }
+  
+    .progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: rgba(255, 255, 255, 0.7);
+      -webkit-animation: progress 3s linear forwards;
+              animation: progress 3s linear forwards;
+    }
+  }
+  
+  @-webkit-keyframes fadeinout {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    10% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  @keyframes fadeinout {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    10% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  @-webkit-keyframes progress {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  @keyframes progress {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }

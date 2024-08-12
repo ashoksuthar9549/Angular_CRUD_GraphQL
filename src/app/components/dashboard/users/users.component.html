@@ -1,0 +1,58 @@
+<!-- <app-search-user (searchQuery)="searchFilter($event)"/> -->
+
+<div class="users">
+
+<app-search-user />
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th (click)="onSortChange('user_name')" [class.asc]="sortField() === 'user_name' && sortOrder() === 'asc'" [class.desc]="sortField() === 'user_name' && sortOrder() === 'desc'">Username</th>
+            <th (click)="onSortChange('first_name')" [class.asc]="sortField() === 'first_name' && sortOrder() === 'asc'" [class.desc]="sortField() === 'first_name' && sortOrder() === 'desc'">First Name</th>
+            <th (click)="onSortChange('last_name')" [class.asc]="sortField() === 'last_name' && sortOrder() === 'asc'" [class.desc]="sortField() === 'last_name' && sortOrder() === 'desc'">Last Name</th>
+            <th (click)="onSortChange('email')" [class.asc]="sortField() === 'email' && sortOrder() === 'asc'" [class.desc]="sortField() === 'email' && sortOrder() === 'desc' ">Email</th>
+            <th (click)="onSortChange('phone_no')" [class.asc]="sortField() === 'phone_no' && sortOrder() === 'asc'" [class.desc]="sortField() === 'phone_no' && sortOrder() === 'desc' ">Phone</th>
+            <th (click)="onSortChange('status')" [class.asc]="sortField() === 'status' && sortOrder() === 'asc'" [class.desc]="sortField() === 'status' && sortOrder() === 'desc'">Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="isFetching" class="no-data">
+            <td colspan="8">Loading...</td>
+        </tr>
+
+        <tr *ngIf="users().length === 0 && !isFetching" class="no-data">
+            <td colspan="8">No users found</td>
+        </tr>
+
+        <tr *ngFor="let user of users(); let i = index">
+            <td>{{ user.serialNo }}</td>
+            <td>{{user.user_name}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone_no}}</td>
+            <td>
+                <label class="switch">
+                    <input type="checkbox" [checked]="user.status" (change)="changeStatus(user)"/>
+                    <span class="slider round"></span>
+                </label>
+            </td>
+            <td>
+                <button class="edit-btn" (click)="openEditModal(user)">Edit</button>
+                <button class="delete-btn" (click)="openDeleteModal(user)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-pagination *ngIf="users().length > 0"/>
+<app-toaster />
+<app-modal
+  *ngIf="showModal"
+  [title]="modalTitle"
+  [message]="modalMessage"
+  (confirmed)="handleModalConfirmation($event)"
+></app-modal>
+</div>
