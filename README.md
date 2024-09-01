@@ -1,27 +1,59 @@
-# AngularCRUDGraphQL
+# Angular CRUD Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+## Login Credentials
 
-## Development server
+To access the application, use the following login credentials:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Email**: `amit.shah@brainvire.com`
+- **Password**: `Brain@1234`
 
-## Code scaffolding
+## Table of Contents
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+6. [Technologies Used](#technologies-used)
 
-## Build
+## Project Overview
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This is an Angular-based CRUD (Create, Read, Update, Delete) application designed to manage user information. The application supports operations such as adding new users, editing existing user details, and deleting users. It utilizes reactive forms for handling form input and includes validation rules to ensure data integrity. The backend is powered by a GraphQL API, which provides a flexible and efficient way to fetch and manipulate data.
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Add User**: Create a new user with details like username, first name, last name, email, phone number, status, and date of birth.
+- **Edit User**: Update existing user details.
+- **Change User Status**: Update existing user status as Active or Inactive.
+- **Delete User**: Remove users from the system.
+- **User List**: Display a list of all users with pagination, searching and sorting options.
+- **Form Validation**: Built-in validation for fields such as email format, required fields, and 10-digit phone numbers.
+- **GraphQL API**: Backend API built with GraphQL to provide efficient data querying and manipulation.
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To run this application locally, follow these steps:
 
-## Further help
+1. **Clone the repository**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/ashoksuthar9549/Angular_CRUD_GraphQL.git
+   cd Angular_CRUD_GraphQL
+
+2. **Install dependencies:**:
+
+   ```bash
+   npm install
+
+3. **Run the development server:**:
+
+   ```bash
+   ng serve
+
+## Usage
+Once the application is running, you can perform the following actions:
+
+Add a new user by clicking the "Add User" button and filling out the form.
+Edit an existing user by clicking the "Edit" button next to a user's name.
+Delete a user by clicking the "Delete" button next to a user's name.
+View user details by clicking on the "Details" button next to a user's name.
+Pagination and Sorting options are available to manage the user list.
