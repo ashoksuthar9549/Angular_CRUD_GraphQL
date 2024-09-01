@@ -43,7 +43,7 @@
       <label for="phone_no">Phone Number</label>
       <input id="phone_no" formControlName="phone_no" type="text" placeholder="Enter your phone number">
       <p class="error" *ngIf="addUserForm.get('phone_no')?.invalid && addUserForm.get('phone_no')?.touched">
-        Phone number is required
+        Phone number should be 10 digits
       </p>
     </div>
 

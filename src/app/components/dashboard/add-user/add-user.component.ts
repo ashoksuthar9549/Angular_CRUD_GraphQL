@@ -44,7 +44,7 @@ export class AddUserComponent implements OnInit {
       'last_name': new FormControl('', Validators.required),
       'password': new FormControl('', this.isEdit ? [] : Validators.required),
       'email': new FormControl('', [Validators.required, Validators.email]),
-      'phone_no': new FormControl('',this.isEdit ? [] : Validators.required),
+      'phone_no': new FormControl('', [...(this.isEdit ? [] : [Validators.required]), Validators.pattern(/^\d{10}$/)]),
       'status': new FormControl(1, Validators.required),
       'date_of_birth': new FormControl('', this.isEdit ? [] : Validators.required)
     });
