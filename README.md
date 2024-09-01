@@ -55,7 +55,6 @@ Once the application is running, you can perform the following actions:
 - Add a new user by clicking the "Add User" button and filling out the form with details including username, first name, last name, email, phone number, status, and date of birth.
 - Edit an existing user by navigating to the user list, selecting the user you want to edit, and clicking the "Edit" button. Update the user details as needed and save the changes.
 - Delete a user by navigating to the user list and clicking the "Delete" button next to the user's name. Confirm the deletion when prompted.
-- View user details by clicking on the "Details" button next to a user's name in the user list to see a detailed view of their information.
 - Pagination, Searching and Sorting: Use the pagination controls and sorting options available in the user list to navigate through and manage the list of users.
 
 ## Technologies Used
